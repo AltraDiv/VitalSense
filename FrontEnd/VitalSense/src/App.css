@@ -21,6 +21,15 @@ body {
 .button {
   background-color: #efa9b2;
 }
+
+.change-button{
+  margin-right: 10px;
+}
+
+.submit-button {
+  margin-left: 10px;
+}
+
 .header {
   position: fixed;
   top: 0;
