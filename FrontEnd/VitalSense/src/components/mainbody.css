@@ -1,0 +1,35 @@
+.main-container {
+    padding: 20px;
+    background-color: #fbfefd;
+    border-radius: 8px;
+    width: 300px;
+    margin: auto;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.form-label, .form-text {
+    display: block;
+    margin: 10px 0;
+    color: #bebfee; 
+    font-size: 16px;
+}
+
+.input-field {
+    width: 100%;
+    padding: 8px;
+    margin-top: 4px;
+    border-radius: 4px;
+    border: 1px solid #bed1ee; 
+    box-sizing: border-box;
+    background-color: #efa9b2; 
+    color: #333; 
+}
+
+.input-field:focus {
+    border-color: #0056b3; 
+    outline: none;
+}
+
+.input-field:hover {
+    border-color: #bebfee;
+}
