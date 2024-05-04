@@ -1,34 +1,21 @@
-import React, { useEffect, useState } from "react";
-// import twilio from 'twilio';
-
-// const accountSid = import.meta.env.VITE_SID;
-// const authToken = import.meta.env.VITE_TOKEN;
-// const URL = 'https://api.twilio.com/2010-04-01/Accounts/';
-// const client = twilio(accountSid, authToken);
-
-// function Call() {
-//   client.calls.create({
-//     url: 'http://demo.twilio.com/docs/voice.xml',
-//     to: '+16478619071',
-//     from: '+13656580913'
-//   }).then(call => console.log(call.sid));
-// }
+import React from "react";
 
 const CallButton = () => {
-
   const sendData = () => {
-    // Create a JSON object with the data
-
     // Make a POST request to the server
-    fetch('http://localhost:8111/get-data', {
-      method: 'GET'
+    fetch('http://localhost:8111/post-data', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({name: 'Bob',
+                            phoneto: '16478619071'})    
     })
     .then(response => {
       if (!response.ok) {
         throw new Error('Network response was not ok');
       }
-  
-      return "hi"
+      return response.json();
     })
     .then(data => {
       console.log('Server response:', data);
@@ -46,6 +33,5 @@ const CallButton = () => {
     </div>
   );
 }
-
 
 export default CallButton;
