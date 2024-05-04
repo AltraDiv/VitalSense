@@ -9,7 +9,8 @@ const CallButton = () => {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({name: 'Bob',
-                            phoneto: '16478619071'})    
+                            phoneto: '16478619071',
+                            problem: 'HeartAttack'})    
     })
     .then(response => {
       if (!response.ok) {
