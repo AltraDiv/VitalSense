@@ -12,11 +12,16 @@ body {
   text-align: center; 
   width: 100%;
   display: flex;
-  flex-direction: column;
+  
   justify-content: center;
   height: calc(100% - 60px); 
   padding-top: 60px; 
 }
+
+.content-container{
+  display: flex;
+}
+
 
 .button {
   background-color: #efa9b2;
