@@ -24,10 +24,16 @@ body {
 
 .change-button{
   margin-right: 10px;
+  background-color: #efa9b2
 }
 
 .submit-button {
-  margin-left: 10px;
+  background-color: #efa9b2
+}
+
+.button:hover, .submit-button:hover, .change-button:hover {
+  background-color: #e78e99;
+  border-color: #efa9b2;
 }
 
 .header {

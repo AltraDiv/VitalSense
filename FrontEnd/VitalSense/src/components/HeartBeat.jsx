@@ -10,7 +10,7 @@ function HeartBeat() {
     <div className="main-container">
       <form>
         <label className="form-text">
-        <h1>Automatic Heart Beat</h1>
+        <h1 className="title">Automatic Heart Beat</h1>
         <p>Automatic Heart Beat</p>
         </label>
       </form>
@@ -21,7 +21,7 @@ function HeartBeat() {
       <div className="main-container">
         <form>
           <label className="form-label">
-          <h1>Manual Heart Beat</h1>
+          <h1 className="title">Manual Heart Beat</h1>
             <input
               type="text"
               name="heartbeat"
