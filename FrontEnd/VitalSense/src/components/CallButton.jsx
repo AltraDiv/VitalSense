@@ -1,6 +1,6 @@
 import React from "react";
 
-const CallButton = () => {
+const CallButton = ({ name, age }) => {
   const sendData = () => {
     // Make a POST request to the server
     fetch('http://localhost:8111/post-data', {
@@ -8,12 +8,16 @@ const CallButton = () => {
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({name: 'Bob',
-                            phoneto: '16478619071',
-                            problem: 'HeartAttack'})    
+      body: JSON.stringify({
+        name: name,
+        age: age,
+        phoneto: '16478619071',
+        problem: 'HeartAttack'
+      })    
     })
     .then(response => {
       if (!response.ok) {
+        console.log(name, age)
         throw new Error('Network response was not ok');
       }
       return response.json();
