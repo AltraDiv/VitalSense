@@ -27,7 +27,8 @@ const CallButton = () => {
       if (!response.ok) {
         throw new Error('Network response was not ok');
       }
-      return "success"
+  
+      return "hi"
     })
     .then(data => {
       console.log('Server response:', data);
@@ -41,9 +42,7 @@ const CallButton = () => {
 
   return (
     <div>
-      <h1>Send Data to Server</h1>
-      
-      <button onClick={sendData}>Send Data</button>
+      <button onClick={sendData}>Call</button>
     </div>
   );
 }

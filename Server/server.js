@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
@@ -15,13 +16,21 @@ app.post('/', (req, res) => {
 // Route to handle POST requests to /post-data
 app.get('/get-data', (req, res) => {
 //   const requestData = req.body; // Assuming JSON data is sent in the request body
-  console.log('Hey we got the request to make the twilio tingy');
+  console.log('Hey we got the request to make the twilio tingy: ');
 
-  // implement twilio here
-
-  // check if success
+  const accountSid = process.env.VITE_SID;
+  const authToken = process.env.VITE_TOKEN;
   
-  // Assuming you want to send back a response
+  const client = require('twilio')(accountSid, authToken);
+
+  client.calls
+      .create({
+         url: 'http://demo.twilio.com/docs/voice.xml',
+         to: '+16478619071',
+         from: '+13656580913'
+       })
+      .then(call => console.log(call.sid));
+
   res.status(200).json({ message: 'success' });
 });
 
