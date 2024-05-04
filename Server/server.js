@@ -12,6 +12,7 @@ app.use(cors());
 app.post('/post-data', (req, res) => {
   const name = req.body.name;
   const phoneto = req.body.phoneto;
+  const problem = req.body.problem;
   const accountSid = process.env.VITE_SID;
   const authToken = process.env.VITE_TOKEN;
   
@@ -30,7 +31,7 @@ app.post('/post-data', (req, res) => {
 
   // client.messages
   //     .create({
-  //        body: `Warning! This text is by VitalSense, ${name} has suffered a heartstroke! Emergency Responders have been notified`,
+  //        body: `Warning! This text is by VitalSense, ${name} has suffered a ${problem}! Emergency Responders have been notified`,
   //        from: '+13656580913',
   //        to: `${phoneto}`
   //      })
