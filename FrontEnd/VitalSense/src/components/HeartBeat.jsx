@@ -3,6 +3,7 @@ import { useState } from "react";
 
 function HeartBeat() {
   const [button, setButton] = useState(0);
+  const [heartBeat, setHeartBeat] = useState("");
 
   if (button === 0) {
   return (
@@ -30,6 +31,7 @@ function HeartBeat() {
           </label>
         </form>
         <button onClick={() => {setButton(0)}}>Change to Automatic</button>
+        <button onClick={(event) => {setHeartBeat(event.target.value)}}>Submit</button>
       </div>
     )};
 }
