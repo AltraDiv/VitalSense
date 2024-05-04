@@ -1,12 +1,15 @@
 body {
   background-color: #fbfefd;
+  margin: 0; 
+  padding: 0; 
+
 }
 
 .app-container {
-  text-align: center;
+  text-align: center; 
   width: 100%;
- 
   margin: auto;
+  justify-content: center;
 }
 
 .header {
@@ -19,8 +22,17 @@ body {
   padding: 1rem 0;
 }
 
-.main-content {
+.content-container {
+  display: flex; 
   padding-top: 60px; 
-  background-color: #fbfefd; 
-  padding: 2rem;
+  width: 100%;
+  box-sizing: border-box;
 }
+
+.main-content, .heart-beat {
+  flex: 1; 
+  padding: 2rem; 
+  background-color: #fbfefd; 
+}
+
+
