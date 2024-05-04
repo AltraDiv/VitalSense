@@ -1,16 +1,24 @@
 .main-container {
     padding: 20px;
-    background-color: #fbfefd;
+    background-color: #d4d5ef; 
     border-radius: 8px;
     width: 300px;
     margin: auto;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
+.title {
+    color: #b0b1ed;
+}
+
+.placeholder {
+    color: black;
+}
+
 .form-label, .form-text {
     display: block;
     margin: 10px 0;
-    color: #bebfee; 
+    color: #b0b1ed;
     font-size: 16px;
 }
 
@@ -19,9 +27,9 @@
     padding: 8px;
     margin-top: 4px;
     border-radius: 4px;
-    border: 1px solid #bed1ee; 
+    border: 1px solid #bebfee; 
     box-sizing: border-box;
-    background-color: #efa9b2; 
+    background-color: #fbfefd; 
     color: #333; 
 }
 

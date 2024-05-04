@@ -10,17 +10,7 @@ function Mainbody() {
   return (
     <div className="main-container">
       <form>
-        <label className="form-text">
-          Heart Rate:
-          <div className="form-text-field">
-          <p>Heart Rate</p>
-          </div>
-        </label>
-        <label className="form-label">
-          Car:
-          <input type="text" name="car" placeholder="Enter car model" className="input-field" onChange={(event) => {
-    setCar(event.target.value)}}/>
-        </label>
+        <h1 className="title">Client Information</h1>
         <label className="form-label">
           Name:
           <input type="text" name="name" placeholder="Enter name" className="input-field" onChange={(event) => {
@@ -30,6 +20,12 @@ function Mainbody() {
           Age:
           <input type="text" name="age" placeholder="Enter age" className="input-field" onChange={(event) => {
     setAge(event.target.value)}}/>
+        </label>
+        <label className="form-label">
+          Phone number:
+          <input type="text" name="phone-number" placeholder="Enter phone number" className="input-field" onChange={(event) => {
+            setPhone(event.target.value)
+          }}/>
         </label>
       </form>
       <CallButton name={name} car={car} age={age}/>

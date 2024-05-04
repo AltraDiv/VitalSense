@@ -14,7 +14,7 @@ function HeartBeat() {
         <p>Automatic Heart Beat</p>
         </label>
       </form>
-      <button onClick={() => {setButton(1)}}>Change to Manual</button>
+      <button className="button" onClick={() => {setButton(1)}}>Change to Manual</button>
     </div>
   )} else {
     return (
@@ -30,8 +30,8 @@ function HeartBeat() {
             />
           </label>
         </form>
-        <button onClick={() => {setButton(0)}}>Change to Automatic</button>
-        <button onClick={(event) => {setHeartBeat(event.target.value)}}>Submit</button>
+        <button className="button" onClick={() => {setButton(0)}}>Change to Automatic</button>
+        <button className="button" onClick={(event) => {setHeartBeat(event.target.value)}}>Submit</button>
       </div>
     )};
 }
