@@ -48,11 +48,9 @@ body {
   width: 100%; 
 }
 
-.content-container {
-  display: flex;
-  flex: 1; 
-  align-items: center; 
-  justify-content: center; 
+.main-content {
+  margin-top: 100px; 
+  background-color: #fbfefd; 
   padding: 2rem;
   box-sizing: border-box;
   width: 100%; 
