@@ -23,7 +23,7 @@ app.post('/post-data', (req, res) => {
 
   client.calls
       .create({
-         message: `${twiml.toString()}`,
+         url: `http://demo.twilio.com/docs/voice.xml`,
          to: `${phoneto}`,
          from: '+13656580913'
        })
