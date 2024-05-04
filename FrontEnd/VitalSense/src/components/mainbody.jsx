@@ -23,7 +23,7 @@ function Mainbody() {
     setAge(event.target.value)}}/>
         </label>
         <label className="form-label">
-          Phone number (optional):
+          Phone number:
           <input type="text" name="phone-number" placeholder="Enter phone number" className="input-field" value={phone} onChange={(event) => {
             setPhone(event.target.value)
           }}/>

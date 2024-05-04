@@ -40,7 +40,7 @@ const CallButton = ({ name, age, phone }) => {
       <p style={{color: "black"}}>{error}</p>
       <button onClick={() => {
         
-        if (name && age) {
+        if (name && age && phone) {
           setError(null);
           sendData();
         } else {
