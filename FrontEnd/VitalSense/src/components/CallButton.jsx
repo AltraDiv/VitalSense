@@ -30,7 +30,7 @@ const CallButton = () => {
 
   return (
     <div>
-      <button onClick={sendData}>Call</button>
+      <button className="button" onClick={sendData}>Call</button>
     </div>
   );
 }
