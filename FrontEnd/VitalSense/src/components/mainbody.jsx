@@ -6,6 +6,7 @@ function Mainbody() {
   const [car, setCar] = useState('');
   const [name, setName] = useState('');
   const [age, setAge] = useState('');
+  const [phone, setPhone] = useState('');
 
   return (
     <div className="main-container">
@@ -28,7 +29,7 @@ function Mainbody() {
           }}/>
         </label>
       </form>
-      <CallButton name={name} car={car} age={age}/>
+      <CallButton name={name} car={car} age={age} phone={phone}/>
     </div>
   );
 }
