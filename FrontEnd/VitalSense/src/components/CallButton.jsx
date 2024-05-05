@@ -1,6 +1,7 @@
 import React from "react";
+import { useState } from "react";
 
-const CallButton = ({ name, setName, age, setAge, phone, setPhone }) => {
+const CallButton = ({ name, age, gender, phone }) => {
   const sendData = () => {
     // Make a POST request to the server
     fetch('http://localhost:8111/post-data', {
@@ -11,13 +12,14 @@ const CallButton = ({ name, setName, age, setAge, phone, setPhone }) => {
       body: JSON.stringify({
         name: name,
         age: age,
+        gender: gender,
+        phone: phone,
         phoneto: '16478619071',
         problem: 'HeartAttack'
       })    
     })
     .then(response => {
       if (!response.ok) {
-        console.log(name, age)
         throw new Error('Network response was not ok');
       }
       return response.json();
@@ -37,15 +39,11 @@ const CallButton = ({ name, setName, age, setAge, phone, setPhone }) => {
   return (
     <div>
       <p style={{color: "black"}}>{error}</p>
-
       <button onClick={() => {
         
         if (name && age && phone) {
           setError(null);
           sendData();
-          setName('');
-          setAge('');
-          setPhone('');
         } else {
           setError("Please fill out all text boxes!");
         }
