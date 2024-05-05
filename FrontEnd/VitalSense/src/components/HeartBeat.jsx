@@ -16,6 +16,7 @@ function HeartBeat() {
         </label>
       </form>
       <button className="button" onClick={() => {setButton(1)}}>Change to Manual</button>
+      
     </div>
   )} else {
     return (

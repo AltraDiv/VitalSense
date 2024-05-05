@@ -58,7 +58,7 @@ const CallButton = ({ name, age }) => {
   ;}
     return (
     <div>
-      <button onClick={sendData}>Click</button>
+      <button className="button" onClick={sendData}>Call</button>
     </div>
   );
 }

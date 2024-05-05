@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './mainbody.css';
 import SubmitButton from './SubmitButton';
+import CallButton from './CallButton';
 
 function Mainbody() {
   const [name, setName] = useState('');
@@ -24,9 +25,9 @@ function Mainbody() {
     setAge(event.target.value)}}/>
         </label>
         <label className="form-label">
-        Gender:
+        
           <div>
-            <input type="radio" name="gender" value="Male" checked={gender === "Male"}
+          Gender:<input type="radio" name="gender" value="Male" checked={gender === "Male"}
               onChange={(event) => setGender(event.target.value)} /> Male
             <input type="radio" name="gender" value="Female" checked={gender === "Female"}
               onChange={(event) => setGender(event.target.value)} /> Female
@@ -44,7 +45,8 @@ function Mainbody() {
             setPhone(event.target.value)
           }}/>
         </label>
-      </form>      
+      </form>  
+      <CallButton name={name} setName={setName} gender={gender} setGender={setGender} age={age} setAge={setAge} location={location} setLocation={setLocation} phone={phone} setPhone={setPhone}/>    
       <SubmitButton name={name} setName={setName} gender={gender} setGender={setGender} age={age} setAge={setAge} location={location} setLocation={setLocation} phone={phone} setPhone={setPhone}/>
     </div>
   );
