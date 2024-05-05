@@ -3,7 +3,6 @@ import './mainbody.css';
 import CallButton from './CallButton';
 
 function Mainbody() {
-  const [car, setCar] = useState('');
   const [name, setName] = useState('');
   const [age, setAge] = useState('');
   const [phone, setPhone] = useState('');
@@ -25,7 +24,7 @@ function Mainbody() {
         </label>
         <label className="form-label">
           Gender:
-          <input type="text" name="gender" placeholder="Please enter your gender" className="input-field" value={phone} onChange={(event) => {
+          <input type="text" name="gender" placeholder="Please enter your gender" className="input-field" value={gender} onChange={(event) => {
             setGender(event.target.value)
           }}/>
         </label>
