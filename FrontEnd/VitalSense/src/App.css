@@ -21,9 +21,8 @@ body {
 .content-container {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   height: 100%;
-  padding: 10rem;
   box-sizing: border-box;
 }
 
@@ -54,6 +53,7 @@ body {
 .main-content, .heart-beat {
   margin-top: 100px;
   flex: 1;
-  padding: 2rem;
+  padding: 3rem;
+  margin-bottom: 4px;
   background-color: #fbfefd;
 }

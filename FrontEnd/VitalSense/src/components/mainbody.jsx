@@ -24,8 +24,14 @@ function Mainbody() {
         </label>
         <label className="form-label">
           Gender:
-          <input type="text" name="gender" placeholder="Please enter your gender" className="input-field" value={gender} onChange={(event) => {
+          <input type="text" name="gender" placeholder="Enter gender" className="input-field" value={gender} onChange={(event) => {
             setGender(event.target.value)
+          }}/>
+        </label>
+        <label className="form-label">
+          Location:
+          <input type="text" name="location" placeholder="Enter location" className="input-field" value={location} onChange={(event) => {
+            setLocation(event.target.value)
           }}/>
         </label>
         <label className="form-label">
