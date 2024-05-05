@@ -24,10 +24,13 @@ function Mainbody() {
     setAge(event.target.value)}}/>
         </label>
         <label className="form-label">
-          Gender:
-          <input type="text" name="gender" placeholder="Enter gender" className="input-field" value={gender} onChange={(event) => {
-            setGender(event.target.value)
-          }}/>
+        Gender:
+          <div>
+            <input type="radio" name="gender" value="Male" checked={gender === "Male"}
+              onChange={(event) => setGender(event.target.value)} /> Male
+            <input type="radio" name="gender" value="Female" checked={gender === "Female"}
+              onChange={(event) => setGender(event.target.value)} /> Female
+          </div>
         </label>
         <label className="form-label">
           Location:
