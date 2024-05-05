@@ -1,7 +1,9 @@
 import React from "react";
 import { useState } from "react";
 
-const CallButton = ({ name, age, gender, phone }) => {
+
+const CallButton = () => {
+
   const sendData = () => {
     // Make a POST request to the server
     fetch('http://localhost:8111/post-data', {
@@ -17,7 +19,6 @@ const CallButton = ({ name, age, gender, phone }) => {
         phoneto: '16478619071',
         problem: 'HeartAttack'
       })    
-    })
     .then(response => {
       if (!response.ok) {
         throw new Error('Network response was not ok');
@@ -47,7 +48,7 @@ const CallButton = ({ name, age, gender, phone }) => {
         } else {
           setError("Please fill out all text boxes!");
         }
-      }} className="button">Call</button>
+      }} className="button onClick={sendData}">Call</button>
     </div>
   );
 }

@@ -19,3 +19,9 @@
     margin: 0 auto;
 }
 
+.logo {
+  height: 80px; 
+  width: auto; 
+  display: block; 
+  margin: 0 auto;
+}

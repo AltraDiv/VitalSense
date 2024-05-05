@@ -3,10 +3,12 @@ import './mainbody.css';
 import CallButton from './CallButton';
 
 function Mainbody() {
+  const [car, setCar] = useState('');
   const [name, setName] = useState('');
   const [age, setAge] = useState('');
   const [phone, setPhone] = useState('');
   const [gender, setGender] = useState ('');
+
 
   return (
     <div className="main-container">
@@ -29,6 +31,7 @@ function Mainbody() {
           }}/>
         </label>
         <label className="form-label">
+          
           Phone number:
           <input type="text" name="phone-number" placeholder="Enter phone number" className="input-field" value={phone} onChange={(event) => {
             setPhone(event.target.value)
