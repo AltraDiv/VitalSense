@@ -3,6 +3,7 @@ import Header from "./components/Header.jsx";
 import Mainbody from "./components/mainbody.jsx"
 import CallButton from "./components/CallButton.jsx"
 import HeartBeat from './components/HeartBeat.jsx';
+import Bpm from './components/Bpm.jsx';
 import './App.css'
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
   </div>
   <div className="app-container">
     <HeartBeat/>
+    <Bpm/>
   </div>
   </>
   );
