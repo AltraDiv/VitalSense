@@ -5,6 +5,8 @@ const cors = require('cors');
 const VoiceResponse = require('twilio').twiml.VoiceResponse;
 const app = express();
 const PORT = 8111;
+const { GoogleGenerativeAI } = require("@google/generative-ai");
+const genAI = new GoogleGenerativeAI(process.env.GEM_API_KEY);
 var SerialPort = require('serialport');
 
 app.use(bodyParser.json());
@@ -13,7 +15,7 @@ app.use(cors());
 app.post('/post-data', (req, res) => {
   const name = req.body.name;
   const phoneto = req.body.phoneto;
-  const accountSid = process.env.VITE_SID;
+   const accountSid = process.env.VITE_SID;
   const authToken = process.env.VITE_TOKEN;
   
   const client = require('twilio')(accountSid, authToken);
@@ -39,10 +41,6 @@ app.post('/post-data', (req, res) => {
 
   res.status(200).json({ message: 'success' });
 });
-
-
-
-
 
 const parsers = SerialPort.parsers;
 const parser = new parsers.Readline({
@@ -73,11 +71,20 @@ app.get('/get-data', (req, res) => {
     }
 
     else {
-      //console.log("Handler has already executed...");
+      console.log("Handler has already executed...");
     }
   });
 
-  // handler.destroy();
+   //handler.destroy();
+});
+
+app.get('/get-gemini', (req, res) => {
+  const model = genAI.getGenerativeModel({ model: "gemini-pro" });
+  const prompt = "return an integer value of 2";
+
+  const result = model.generateContent(prompt);
+  res.status(200).json({ ai: result});
+  //console.log(result.response.text());
 });
 
 // Start the server
