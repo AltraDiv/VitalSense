@@ -1,7 +1,9 @@
 require('dotenv').config();
+require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
+const VoiceResponse = require('twilio').twiml.VoiceResponse;
 const VoiceResponse = require('twilio').twiml.VoiceResponse;
 const app = express();
 const PORT = 8111;
