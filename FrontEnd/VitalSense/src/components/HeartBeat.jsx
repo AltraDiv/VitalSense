@@ -32,7 +32,6 @@ function HeartBeat() {
         </form>
         <div className="heart-button">
         <button className="change-button" onClick={() => {setButton(0)}}>Change to Automatic</button>
-        <button className="submit-button" onClick={(event) => {setHeartBeat(event.target.value)}}>Submit</button>
         </div>
       </div>
     )};

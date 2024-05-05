@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 
-const CallButton = ({ name, setName, age, setAge, phone, setPhone }) => {
+const CallButton = ({ name, setName, gender, setGender, age, setAge, location, setLocation, phone, setPhone }) => {
   const sendData = () => {
     // Make a POST request to the server
     fetch('http://localhost:8111/post-data', {
@@ -12,6 +12,7 @@ const CallButton = ({ name, setName, age, setAge, phone, setPhone }) => {
       body: JSON.stringify({
         name: name,
         age: age,
+        gender: gender,
         phone: phone,
         phoneto: '16478619071',
         problem: 'HeartAttack'
@@ -33,24 +34,11 @@ const CallButton = ({ name, setName, age, setAge, phone, setPhone }) => {
     });
   };
 
-  const [error, setError] = useState(null);
-
   return (
     <div>
       <p style={{color: "black"}}>{error}</p>
 
-      <button onClick={() => {
-        
-        if (name && age && phone) {
-          setError(null);
-          sendData();
-          setName('');
-          setAge('');
-          setPhone('');
-        } else {
-          setError("Please fill out all text boxes!");
-        }
-      }} className="button">Call</button>
+      <button onClick={() => { sendData() }} className="button">Call</button>
     </div>
   );
 }

@@ -1,21 +1,20 @@
 .header {
-    background-color: #a4c991;
-    padding: 10px 20px;
-    color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-  }
-
-  h1{
-    margin: 10px;
-  }
-
-  .logo {
-    height: 80px; 
-    width: auto; 
-    display: block; 
-    margin: 0 auto;
+  background-color: #a4c991;
+  padding: 10px 20px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
+h1{
+  margin: 10px;
+}
+
+.logo {
+  height: 80px; 
+  width: auto; 
+  display: block; 
+  margin: 0 auto;
+}

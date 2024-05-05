@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import './mainbody.css';
-import CallButton from './CallButton';
+import SubmitButton from './SubmitButton';
 
 function Mainbody() {
   const [name, setName] = useState('');
   const [age, setAge] = useState('');
   const [phone, setPhone] = useState('');
+  const [gender, setGender] = useState ('');
+  const [location, setLocation] = useState ('');
 
   return (
     <div className="main-container">
@@ -22,14 +24,25 @@ function Mainbody() {
     setAge(event.target.value)}}/>
         </label>
         <label className="form-label">
+          Gender:
+          <input type="text" name="gender" placeholder="Please enter your gender" className="input-field" value={gender} onChange={(event) => {
+            setGender(event.target.value)
+          }}/>
+        </label>
+        <label className="form-label">
+          Location:
+          <input type="text" name="location" placeholder="Enter phone number" className="input-field" value={location} onChange={(event) => {
+            setLocation(event.target.value)
+          }}/>
+        </label>
+        <label className="form-label">
           Phone number:
           <input type="text" name="phone-number" placeholder="Enter phone number" className="input-field" value={phone} onChange={(event) => {
             setPhone(event.target.value)
           }}/>
         </label>
-      </form>
-      
-      <CallButton name={name} setName={setName} age={age} setAge={setAge} phone={phone} setPhone={setPhone}/>
+      </form>      
+      <SubmitButton name={name} setName={setName} gender={gender} setGender={setGender} age={age} setAge={setAge} location={location} setLocation={setLocation} phone={phone} setPhone={setPhone}/>
     </div>
   );
 }
