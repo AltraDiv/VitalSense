@@ -39,6 +39,7 @@ app.get('/get-data', (req, res) => {
   const handler = parser.once('data', function(data) {
     if (!handlerExecuted) { // Check if the handler has already executed
       glob_bpm = data;
+      //console.log("Data received: ", data);
       res.status(200).json({ bpm: data });
 
       handlerExecuted = true;
