@@ -22,7 +22,7 @@ export default function Bpm() {
 
     return (
         <div>
-            <h1>Bpm: {data.bpm}</h1>
+            <h1 className="bpm">Bpm: {data.bpm}</h1>
         </div>
     );
 }
