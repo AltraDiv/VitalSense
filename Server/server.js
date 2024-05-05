@@ -60,15 +60,15 @@ app.post("/post-data", (req, res) => {
   const problem = req.body.problem;
   const accountSid = process.env.VITE_SID;
   const authToken = process.env.VITE_TOKEN;
-
+  console.log(name)
   const client = require("twilio")(accountSid, authToken);
 
   // const twiml = new VoiceResponse();
   // twiml.say('Hello from your pals at Twilio! Have fun.');
-
+  
   client.calls
       .create({
-         url: `http://127.0.0.1:1337/`,
+        twiml: `<Response><Say>${name} ${name} ${name} ${name} is a test</Say></Response>`,
          to: `${phoneto}`,
          from: '+13656580913'
        })

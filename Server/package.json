@@ -8,6 +8,7 @@
     "express": "^4.19.2",
     "nodemon": "^3.1.0",
     "serialport": "^9.0.1",
-    "twilio": "^5.0.4"
+    "twilio": "^5.0.4",
+    "vite": "^5.2.11"
   }
 }
