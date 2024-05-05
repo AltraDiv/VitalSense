@@ -8,19 +8,21 @@ import './App.css'
 
 function App() {
   return (
-      <div className="app-container">
-        <div className="header">
-          <Header/>
-        </div>
-        <div className="content-container">
-          <div className="main-content">
-            <Mainbody/>
-          </div>
-          <div className="heart-beat">
-            <HeartBeat/>
-          </div>
-        </div>
+    <>
+    <div className="app-container">
+      <div className="header">
+        <Header/>
       </div>
+      <div className="content-container">
+    <div className="main-content">
+      <Mainbody/>
+    </div>
+  <div className="heart-beat">
+    <HeartBeat/>
+    </div>
+    </div>
+  </div>
+  </>
   );
 }
 

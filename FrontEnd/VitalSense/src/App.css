@@ -27,6 +27,12 @@ body {
   box-sizing: border-box;
 }
 
+.bpm {
+  color: #d8707e;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.05);
+  margin-bottom: 20px;
+}
+
 .change-button{
   margin: 10px;
 }

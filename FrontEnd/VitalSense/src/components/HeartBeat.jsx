@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import Bpm from "./Bpm";
 
 function HeartBeat() {
   const [button, setButton] = useState(0);
@@ -11,7 +12,7 @@ function HeartBeat() {
       <form>
         <label className="form-text">
         <h1 className="title">Automatic Heart Beat</h1>
-        <p>Automatic Heart Beat</p>
+        <Bpm/>
         </label>
       </form>
       <button className="button" onClick={() => {setButton(1)}}>Change to Manual</button>
