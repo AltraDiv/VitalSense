@@ -5,8 +5,7 @@ const cors = require('cors');
 const VoiceResponse = require('twilio').twiml.VoiceResponse;
 const app = express();
 const PORT = 8111;
-const { GoogleGenerativeAI } = require("@google/generative-ai");
-const genAI = new GoogleGenerativeAI(process.env.GEM_API_KEY);
+const {VertexAI} = require('@google-cloud/vertexai');
 var SerialPort = require('serialport');
 
 app.use(bodyParser.json());
@@ -78,13 +77,55 @@ app.get('/get-data', (req, res) => {
    //handler.destroy();
 });
 
-app.get('/get-gemini', (req, res) => {
-  const model = genAI.getGenerativeModel({ model: "gemini-pro" });
-  const prompt = "return an integer value of 2";
-
-  const result = model.generateContent(prompt);
-  res.status(200).json({ ai: result});
-  //console.log(result.response.text());
+app.get('/get-gemini', async (req, res) => {
+  async function createNonStreamingMultipartContent(
+    projectId = 'PROJECT_ID',
+    location = 'us-central1',
+    model = 'gemini-1.0-pro-vision',
+    image = 'gs://generativeai-downloads/images/scones.jpg',
+    mimeType = 'image/jpeg'
+  ) {
+    // Initialize Vertex with your Cloud project and location
+    const vertexAI = new VertexAI({project: projectId, location: location});
+  
+    // Instantiate the model
+    const generativeVisionModel = vertexAI.getGenerativeModel({
+      model: model,
+    });
+  
+    // For images, the SDK supports both Google Cloud Storage URI and base64 strings
+    const filePart = {
+      fileData: {
+        fileUri: image,
+        mimeType: mimeType,
+      },
+    };
+  
+    const textPart = {
+      text: 'what is shown in this image?',
+    };
+  
+    const request = {
+      contents: [{role: 'user', parts: [filePart, textPart]}],
+    };
+  
+    console.log('Prompt Text:');
+    console.log(request.contents[0].parts[1].text);
+  
+    console.log('Non-Streaming Response Text:');
+    // Create the response stream
+    const responseStream =
+      await generativeVisionModel.generateContentStream(request);
+  
+    // Wait for the response stream to complete
+    const aggregatedResponse = await responseStream.response;
+  
+    // Select the text from the response
+    const fullTextResponse =
+      aggregatedResponse.candidates[0].content.parts[0].text;
+  
+    console.log(fullTextResponse);
+  }
 });
 
 // Start the server
