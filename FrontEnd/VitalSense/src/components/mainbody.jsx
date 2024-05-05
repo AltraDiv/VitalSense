@@ -7,6 +7,7 @@ function Mainbody() {
   const [age, setAge] = useState('');
   const [phone, setPhone] = useState('');
   const [gender, setGender] = useState ('');
+  const [location, setLocation] = useState('');
 
   return (
     <div className="main-container">

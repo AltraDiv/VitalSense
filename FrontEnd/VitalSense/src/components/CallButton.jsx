@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 
-const CallButton = ({ name, age, gender, phone }) => {
+const CallButton = ({ name, age, gender, location, phone }) => {
   const sendData = () => {
     // Make a POST request to the server
     fetch('http://localhost:8111/post-data', {
@@ -13,6 +13,7 @@ const CallButton = ({ name, age, gender, phone }) => {
         name: name,
         age: age,
         gender: gender,
+        location: location,
         phone: phone,
         phoneto: '16478619071',
         problem: 'HeartAttack'
