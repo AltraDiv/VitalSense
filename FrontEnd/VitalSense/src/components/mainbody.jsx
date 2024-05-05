@@ -7,6 +7,8 @@ function Mainbody() {
   const [name, setName] = useState('');
   const [age, setAge] = useState('');
   const [phone, setPhone] = useState('');
+  const [gender, setGender] = useState ('');
+
 
   return (
     <div className="main-container">
@@ -23,6 +25,13 @@ function Mainbody() {
     setAge(event.target.value)}}/>
         </label>
         <label className="form-label">
+          Gender:
+          <input type="text" name="gender" placeholder="Please enter your gender" className="input-field" value={gender} onChange={(event) => {
+            setGender(event.target.value)
+          }}/>
+        </label>
+        <label className="form-label">
+          
           Phone number:
           <input type="text" name="phone-number" placeholder="Enter phone number" className="input-field" value={phone} onChange={(event) => {
             setPhone(event.target.value)
