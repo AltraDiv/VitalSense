@@ -36,7 +36,8 @@ function Mainbody() {
           <input type="text" name="age" placeholder="Enter age" className="input-field" onChange={handleAgeChange}/>
         </label>
       </form>
-      <CallButton name={name} age={age}/>
+      
+      <CallButton name={name} setName={setName} age={age} setAge={setAge} phone={phone} setPhone={setPhone}/>
     </div>
   );
 }
