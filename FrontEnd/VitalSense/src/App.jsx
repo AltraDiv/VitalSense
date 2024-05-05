@@ -22,6 +22,9 @@ function App() {
     <HeartBeat/>
     <Bpm/>
   </div>
+  <div className="app-container">
+    <CallButton/>
+  </div>
   </>
   );
 }
