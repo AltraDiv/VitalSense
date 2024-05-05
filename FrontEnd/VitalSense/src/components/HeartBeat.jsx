@@ -37,6 +37,7 @@ function HeartBeat() {
             <input
               type="text"
               name="heartbeat"
+              value = {heartBeat}
               placeholder="Enter heart beat"
               className="input-field"
               value={heartBeat}

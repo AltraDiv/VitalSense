@@ -61,6 +61,5 @@ body {
 .main-content, .heart-beat {
   margin-top: 100px;
   flex: 1;
-  padding: 2rem;
   background-color: #fbfefd;
 }
