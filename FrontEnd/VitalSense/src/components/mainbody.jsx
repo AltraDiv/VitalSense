@@ -3,7 +3,6 @@ import './mainbody.css';
 import CallButton from './CallButton';
 
 function Mainbody() {
-  const [car, setCar] = useState('');
   const [name, setName] = useState('');
   const [age, setAge] = useState('');
   const [phone, setPhone] = useState('');
@@ -30,7 +29,7 @@ function Mainbody() {
         </label>
       </form>
       
-      <CallButton name={name} age={age} phone={phone}/>
+      <CallButton name={name} setName={setName} age={age} setAge={setAge} phone={phone} setPhone={setPhone}/>
     </div>
   );
 }

@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 
-const CallButton = ({ name, age, phone }) => {
+const CallButton = ({ name, setName, age, setAge, phone, setPhone }) => {
   const sendData = () => {
     // Make a POST request to the server
     fetch('http://localhost:8111/post-data', {
@@ -34,19 +34,29 @@ const CallButton = ({ name, age, phone }) => {
   };
 
   const [error, setError] = useState(null);
+  const [button, setButton] = useState("Call")
+  const [timeout, setTimeout] = useState(0);
 
   return (
     <div>
       <p style={{color: "black"}}>{error}</p>
+
       <button onClick={() => {
+        console.log(timeout)
         
-        if (name && age && phone) {
+        if (name && age && phone && timeout === 0) {
           setError(null);
           sendData();
+          setName('');
+          setAge('');
+          setPhone('');
+          setTimeout(3)
+        } else if (0 < timeout) {
+          setError(null)
         } else {
           setError("Please fill out all text boxes!");
         }
-      }} className="button">Call</button>
+      }} className="button">{button}</button>
     </div>
   );
 }
