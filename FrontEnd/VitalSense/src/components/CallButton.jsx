@@ -33,29 +33,23 @@ const CallButton = ({ name, setName, age, setAge, phone, setPhone }) => {
   };
 
   const [error, setError] = useState(null);
-  const [button, setButton] = useState("Call")
-  const [timeout, setTimeout] = useState(0);
 
   return (
     <div>
       <p style={{color: "black"}}>{error}</p>
 
       <button onClick={() => {
-        console.log(timeout)
         
-        if (name && age && phone && timeout === 0) {
+        if (name && age && phone) {
           setError(null);
           sendData();
           setName('');
           setAge('');
           setPhone('');
-          setTimeout(3)
-        } else if (0 < timeout) {
-          setError(null)
         } else {
           setError("Please fill out all text boxes!");
         }
-      }} className="button">{button}</button>
+      }} className="button">Call</button>
     </div>
   );
 }
