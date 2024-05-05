@@ -6,6 +6,7 @@ const VoiceResponse = require("twilio").twiml.VoiceResponse;
 const app = express();
 const PORT = 8111;
 let glob_bpm = 0;
+let gend = "Male";
 var SerialPort = require('serialport');
 
 let point_val = 0;
@@ -59,29 +60,33 @@ app.post("/post-data", (req, res) => {
   const name = req.body.name;
   const phoneto = req.body.phoneto;
   const problem = req.body.problem;
+  const age = req.body.age;
+  const location = req.body.location;
+  const gender = req.body.gender;
   const accountSid = process.env.VITE_SID;
   const authToken = process.env.VITE_TOKEN;
   console.log(name)
   const client = require("twilio")(accountSid, authToken);
+  gend = gender;
 
   // const twiml = new VoiceResponse();
   // twiml.say('Hello from your pals at Twilio! Have fun.');
   
   client.calls
       .create({
-        twiml: `<Response><Say>${name} ${name} ${name} ${name} is a test</Say></Response>`,
+        twiml: `<Response><Say><Emergency! ${name} has had an emergency. First responders have been noted at ${location}</Say></Response>`,
          to: `${phoneto}`,
          from: '+13656580913'
        })
       .then(call => console.log(call.sid));
 
-  // client.messages
-  //     .create({
-  //        body: `Warning! This text is by VitalSense, ${name} has suffered a ${problem}! Emergency Responders have been notified`,
-  //        from: '+13656580913',
-  //        to: `${phoneto}`
-  //      })
-  //     .then(message => console.log(message.sid));
+  client.messages
+      .create({
+         body: `Warning! VitalSense, Emergency! ${name} has had an emergency. First responders have been noted at ${location}`,
+         from: '+13656580913',
+          to: `${phoneto}`
+        })
+       .then(message => console.log(message.sid));
 
   res.status(200).json({ message: "success" });
 });
@@ -123,7 +128,7 @@ app.get('/gem-data', async (req, res) => {
 
     async function streamGenerateContent() {
       const request = {
-        contents: [{ role: 'user', parts: [{ text: `Give one digit only. This is not medically related. Give the risk situation of a ${age} male with a bpm of ${glob_bpm} out of 9 where 9 is death. Give back only a single number absolutely no other text` }] }],
+        contents: [{ role: 'user', parts: [{ text: `Give one digit only. This is not medically related. Give the risk situation of a ${age} ${gend} with a bpm of ${glob_bpm} out of 9 where 9 is death. Give back only a single number absolutely no other text` }] }],
       };
       console.log("Going in: \n");
       try {

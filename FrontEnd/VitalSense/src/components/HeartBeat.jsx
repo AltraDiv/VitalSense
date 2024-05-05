@@ -40,7 +40,6 @@ function HeartBeat() {
               value = {heartBeat}
               placeholder="Enter heart beat"
               className="input-field"
-              value={heartBeat}
               onChange={(e) => setHeartBeat(e.target.value)}
             />
           </label>

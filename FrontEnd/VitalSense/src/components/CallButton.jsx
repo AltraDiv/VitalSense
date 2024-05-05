@@ -1,6 +1,6 @@
 import React from "react";
 let point_val;
-const CallButton = ({ name, age }) => {
+const CallButton = ({ name, age, phone, gender, location}) => {
   const sendData = () => {
 
     fetch(`http://localhost:8111/gem-data?age=${age}`)
@@ -16,7 +16,7 @@ const CallButton = ({ name, age }) => {
       // Handle the response from the server as needed
 
       console.log(point_val);
-      if(parseInt(data.point.text) > 7){
+      if(parseInt(data.point.text) >= 7){
       console.log("Call 911");
   
       fetch('http://localhost:8111/post-data', {
@@ -27,7 +27,9 @@ const CallButton = ({ name, age }) => {
         body: JSON.stringify({
           name: name,
           age: age,
-          phoneto: '16478619071',
+          gender: gender,
+          location: location,
+          phoneto: phone,
           problem: 'HeartAttack'
         })    
       })

@@ -35,7 +35,7 @@ function Mainbody() {
         </label>
         <label className="form-label">
           Location:
-          <input type="text" name="location" placeholder="Enter phone number" className="input-field" value={location} onChange={(event) => {
+          <input type="text" name="location" placeholder="Enter location" className="input-field" value={location} onChange={(event) => {
             setLocation(event.target.value)
           }}/>
         </label>
