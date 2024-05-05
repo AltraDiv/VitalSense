@@ -5,6 +5,7 @@ const cors = require('cors');
 const VoiceResponse = require('twilio').twiml.VoiceResponse;
 const app = express();
 const PORT = 8111;
+var SerialPort = require('serialport');
 
 app.use(bodyParser.json());
 app.use(cors());
@@ -41,9 +42,40 @@ app.post('/post-data', (req, res) => {
 });
 
 
+const parsers = SerialPort.parsers;
+const parser = new parsers.Readline({
+    delimiter: '\r\n'
+});
+
+var port = new SerialPort('/dev/cu.usbmodem1101',{ 
+    baudRate: 9600,
+    dataBits: 8,
+    parity: 'none',
+    stopBits: 1,
+    flowControl: false
+});
+
+port.pipe(parser);
+
 // Route to handle POST requests to /post-data
 app.get('/get-data', (req, res) => {
-  
+  let handlerExecuted = false;
+
+  //console.log("Starting to run operation...");
+
+  const handler = parser.once('data', function(data) {
+    if (!handlerExecuted) { // Check if the handler has already executed
+      res.status(200).json({ bpm: data });
+
+      handlerExecuted = true;
+    }
+
+    else {
+      //console.log("Handler has already executed...");
+    }
+  });
+
+  // handler.destroy();
 });
 
 // Start the server
