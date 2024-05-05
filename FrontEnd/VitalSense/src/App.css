@@ -21,9 +21,14 @@ body {
 .content-container {
   display: flex;
   align-items: center;
+<<<<<<< HEAD
   justify-content: center;
   height: 100%;
   padding: 10rem;
+=======
+  justify-content: space-around;
+  height: 100%;
+>>>>>>> b73709fd35a683bc9527a0005d24693b27544519
   box-sizing: border-box;
 }
 
@@ -54,6 +59,11 @@ body {
 .main-content, .heart-beat {
   margin-top: 100px;
   flex: 1;
+<<<<<<< HEAD
   padding: 2rem;
+=======
+  padding: 3rem;
+  margin-bottom: 4px;
+>>>>>>> b73709fd35a683bc9527a0005d24693b27544519
   background-color: #fbfefd;
 }
