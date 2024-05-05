@@ -9,7 +9,7 @@ const CallButton = ({ name, age }) => {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        name: name,
+        name: 'Bob',
         age: age,
         phoneto: '16478619071',
         problem: 'HeartAttack'
@@ -30,6 +30,7 @@ const CallButton = ({ name, age }) => {
       console.error('Error sending data to server:', error);
       // Handle any errors that occurred during the request
     });
+
   };
 
   return (
